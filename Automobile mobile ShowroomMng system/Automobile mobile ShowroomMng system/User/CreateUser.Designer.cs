@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUser));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxUserId = new System.Windows.Forms.TextBox();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.buttonsave = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
-            this.comboBoxSearch = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,20 @@
             this.groupBox1.Size = new System.Drawing.Size(532, 306);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // comboBoxSearch
+            // 
+            this.comboBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBoxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxSearch.DisplayMember = "sa";
+            this.comboBoxSearch.FormattingEnabled = true;
+            this.comboBoxSearch.Location = new System.Drawing.Point(163, 236);
+            this.comboBoxSearch.Name = "comboBoxSearch";
+            this.comboBoxSearch.Size = new System.Drawing.Size(192, 24);
+            this.comboBoxSearch.TabIndex = 15;
+            this.comboBoxSearch.Text = "Enter your name..";
+            this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -181,6 +195,7 @@
             // 
             this.buttonDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Enabled = false;
             this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -219,6 +234,7 @@
             // 
             this.buttonUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUpdate.Enabled = false;
             this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -252,20 +268,6 @@
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = false;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // comboBoxSearch
-            // 
-            this.comboBoxSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBoxSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxSearch.DisplayMember = "sa";
-            this.comboBoxSearch.FormattingEnabled = true;
-            this.comboBoxSearch.Location = new System.Drawing.Point(163, 236);
-            this.comboBoxSearch.Name = "comboBoxSearch";
-            this.comboBoxSearch.Size = new System.Drawing.Size(192, 24);
-            this.comboBoxSearch.TabIndex = 15;
-            this.comboBoxSearch.Text = "Enter your name..";
-            this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // CreateUser
             // 

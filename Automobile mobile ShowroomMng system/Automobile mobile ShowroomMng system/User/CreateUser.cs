@@ -108,6 +108,9 @@ namespace Automobile_mobile_ShowroomMng_system.User
             comboBoxSearch.Text = "";
             autogenerate();
             search_load();
+            buttonsave.Enabled = true;
+            buttonUpdate.Enabled = false;
+            buttonDelete.Enabled = false;
         }
 
         private void buttonsave_Click(object sender, EventArgs e)
@@ -165,6 +168,10 @@ namespace Automobile_mobile_ShowroomMng_system.User
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            buttonsave.Enabled = false;
+            buttonUpdate.Enabled=true;
+            buttonDelete.Enabled = true;
+
             string load = string.Format("SELECT * FROM tbl_user WHERE userName=@userName", cn);
             SqlCommand command = new SqlCommand(load, cn);
             command.Parameters.AddWithValue("@userName", comboBoxSearch.Text);
@@ -220,6 +227,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
 
             }
             cn.Close();
+            search_load();
         }
     }
 }
