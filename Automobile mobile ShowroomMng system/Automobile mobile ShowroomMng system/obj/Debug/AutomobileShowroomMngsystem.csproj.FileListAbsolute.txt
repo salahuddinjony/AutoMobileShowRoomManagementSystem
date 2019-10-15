@@ -10,3 +10,18 @@ F:\Programming C#\Automobile Showroom Mng\Automobile mobile ShowroomMng system\A
 F:\Programming C#\Automobile Showroom Mng\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.exe
 F:\Programming C#\Automobile Showroom Mng\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.pdb
 F:\Programming C#\Automobile Showroom Mng\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.User.CreateUser.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Debug\Automobile mobile ShowroomMng system.exe.config
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.exe
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.pdb
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Debug\Automobile mobile ShowroomMng system.exe
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Debug\Automobile mobile ShowroomMng system.pdb
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\AutomobileShowRoomMngSystem.csprojResolveAssemblyReference.cache
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.Form1.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.MDIParent.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.Properties.Resources.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.User.CreateUser.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.User.LogIn.resources
+F:\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\AutomobileShowRoomMngSystem.csproj.GenerateResource.Cache
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Debug\Automobile mobile ShowroomMng system.exe.config
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.exe
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile mobile ShowroomMng system.pdb

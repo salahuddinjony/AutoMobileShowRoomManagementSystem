@@ -77,7 +77,6 @@
             this.comboBoxSearch.Name = "comboBoxSearch";
             this.comboBoxSearch.Size = new System.Drawing.Size(192, 24);
             this.comboBoxSearch.TabIndex = 15;
-            this.comboBoxSearch.Text = "Enter your name..";
             this.comboBoxSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
