@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUser));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxSearch = new System.Windows.Forms.ComboBox();
@@ -45,8 +46,15 @@
             this.buttonsave = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewCreateUser = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCreateUser)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,7 +68,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(36, 28);
+            this.groupBox1.Location = new System.Drawing.Point(170, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(532, 306);
             this.groupBox1.TabIndex = 0;
@@ -92,6 +100,7 @@
             // textBoxUserId
             // 
             this.textBoxUserId.Enabled = false;
+            this.textBoxUserId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserId.Location = new System.Drawing.Point(163, 35);
             this.textBoxUserId.Multiline = true;
             this.textBoxUserId.Name = "textBoxUserId";
@@ -100,6 +109,7 @@
             // 
             // textBoxUserName
             // 
+            this.textBoxUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUserName.Location = new System.Drawing.Point(163, 90);
             this.textBoxUserName.Multiline = true;
             this.textBoxUserName.Name = "textBoxUserName";
@@ -119,6 +129,7 @@
             // 
             // textBoxPasswd
             // 
+            this.textBoxPasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPasswd.Location = new System.Drawing.Point(163, 139);
             this.textBoxPasswd.Multiline = true;
             this.textBoxPasswd.Name = "textBoxPasswd";
@@ -164,7 +175,7 @@
             this.groupBox2.Controls.Add(this.buttonsave);
             this.groupBox2.Controls.Add(this.buttonUpdate);
             this.groupBox2.Controls.Add(this.buttonNew);
-            this.groupBox2.Location = new System.Drawing.Point(36, 366);
+            this.groupBox2.Location = new System.Drawing.Point(170, 574);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(532, 174);
             this.groupBox2.TabIndex = 1;
@@ -268,17 +279,65 @@
             this.buttonNew.UseVisualStyleBackColor = false;
             this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridViewCreateUser);
+            this.groupBox3.Location = new System.Drawing.Point(36, 368);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(776, 200);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // dataGridViewCreateUser
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Orange;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCreateUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewCreateUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCreateUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridViewCreateUser.Location = new System.Drawing.Point(56, 21);
+            this.dataGridViewCreateUser.Name = "dataGridViewCreateUser";
+            this.dataGridViewCreateUser.RowTemplate.Height = 24;
+            this.dataGridViewCreateUser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridViewCreateUser.Size = new System.Drawing.Size(684, 140);
+            this.dataGridViewCreateUser.TabIndex = 0;
+            this.dataGridViewCreateUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCreateUser_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "User Name";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Password";
+            this.Column3.Name = "Column3";
+            // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 571);
+            this.ClientSize = new System.Drawing.Size(856, 749);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(617, 618);
-            this.MinimumSize = new System.Drawing.Size(617, 618);
+            this.MaximizeBox = false;
             this.Name = "CreateUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create User";
@@ -286,6 +345,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCreateUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +369,10 @@
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxSearch;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridViewCreateUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

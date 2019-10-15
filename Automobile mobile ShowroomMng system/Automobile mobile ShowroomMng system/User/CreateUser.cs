@@ -62,6 +62,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
         {
             autogenerate();
             search_load();
+            grid_Load();
         }
         public void new1()
     {
@@ -101,6 +102,22 @@ namespace Automobile_mobile_ShowroomMng_system.User
             }
             cn.Close();
         }
+        public void grid_Load()
+        {
+            dataGridViewCreateUser.Rows.Clear();
+            string load = string.Format("SELECT id,userName,passwd from tbl_user");
+            SqlCommand comd = new SqlCommand(load, cn);
+            cn.Close();
+            cn.Open();
+            SqlDataReader reader = comd.ExecuteReader();
+            while (reader.Read())
+            {
+                dataGridViewCreateUser.Rows.Add(reader[0], reader[1], reader[2]);
+            }
+            cn.Close();
+
+
+        }
 
         private void buttonNew_Click(object sender, EventArgs e)
         {
@@ -108,6 +125,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
             comboBoxSearch.Text = "";
             autogenerate();
             search_load();
+            grid_Load();
             buttonsave.Enabled = true;
             buttonUpdate.Enabled = false;
             buttonDelete.Enabled = false;
@@ -115,7 +133,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
 
         private void buttonsave_Click(object sender, EventArgs e)
         {
-            new1();
+            
             autogenerate();
             SqlCommand insert = new SqlCommand("INSERT into tbl_user(id,userName,passwd) values(@id,@userName,@passwd)", cn);
 
@@ -124,6 +142,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
             insert.Parameters.AddWithValue("@passwd", textBoxPasswd.Text);
             cn.Close();
             cn.Open();
+            new1();
             
           try
           {
@@ -136,6 +155,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
             }
             cn.Close();
             search_load();
+            grid_Load();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -206,6 +226,7 @@ namespace Automobile_mobile_ShowroomMng_system.User
                 MessageBox.Show("Error!!");
             }
             cn.Close();
+            grid_Load();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -228,6 +249,21 @@ namespace Automobile_mobile_ShowroomMng_system.User
             }
             cn.Close();
             search_load();
+            grid_Load();
+        }
+
+        private void dataGridViewCreateUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            buttonsave.Enabled = false;
+            buttonUpdate.Enabled = true;
+            buttonDelete.Enabled = true;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewCreateUser.Rows[e.RowIndex];
+                textBoxUserId.Text = row.Cells["column1"].Value.ToString();
+                textBoxUserName.Text = row.Cells["column2"].Value.ToString();
+                textBoxPasswd.Text = row.Cells["column3"].Value.ToString();
+            }
         }
     }
 }
