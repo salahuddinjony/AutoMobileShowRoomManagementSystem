@@ -58,5 +58,18 @@ namespace Automobile_mobile_ShowroomMng_system
             cu.Owner = this;
             cu.Show();
         }
+
+        private void newEntryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newEntryToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Employee.EmployeeInfo ei = new Employee.EmployeeInfo();
+            ei.Owner = this;
+            ei.Show();
+
+        }
     }
 }
