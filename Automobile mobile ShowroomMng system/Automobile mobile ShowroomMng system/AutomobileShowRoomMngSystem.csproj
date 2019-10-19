@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPost.cs" />
     <Compile Include="Employee\EmployeeInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,18 @@
     </Compile>
     <Compile Include="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panelpost\Post.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panelpost\Post.Designer.cs">
+      <DependentUpon>Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Qaualification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel\Qaualification.Designer.cs">
+      <DependentUpon>Qaualification.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panelpost\Post.resx">
+      <DependentUpon>Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\Qaualification.resx">
+      <DependentUpon>Qaualification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

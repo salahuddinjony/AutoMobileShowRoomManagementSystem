@@ -35,3 +35,5 @@ F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomM
 F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.User.LogIn.resources
 F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\AutomobileShowRoomMngSystem.csproj.GenerateResource.Cache
 F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.Employee.EmployeeInfo.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.Panel.Qaualification.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Debug\Automobile_mobile_ShowroomMng_system.Panel.Post.resources

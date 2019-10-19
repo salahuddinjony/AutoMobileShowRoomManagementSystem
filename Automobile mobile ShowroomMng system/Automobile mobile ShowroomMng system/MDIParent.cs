@@ -71,5 +71,20 @@ namespace Automobile_mobile_ShowroomMng_system
             ei.Show();
 
         }
+
+        private void panelToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Panel.Qaualification qua = new Panel.Qaualification();
+            qua.Owner = this;
+            qua.Show();
+        }
+
+        private void addPostToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Panel.Post po = new Panel.Post();
+            po.Owner = this;
+            po.Show();
+
+        }
     }
 }
