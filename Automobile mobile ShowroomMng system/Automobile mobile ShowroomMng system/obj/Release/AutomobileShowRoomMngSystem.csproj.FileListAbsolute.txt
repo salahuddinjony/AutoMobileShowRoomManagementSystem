@@ -1,0 +1,15 @@
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Release\Automobile mobile ShowroomMng system.exe.config
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Release\Automobile mobile ShowroomMng system.exe
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\bin\Release\Automobile mobile ShowroomMng system.pdb
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.Employee.EmployeeInfo.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.Form1.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.MDIParent.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.Panel.Post.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.Panel.Qaualification.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.Properties.Resources.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.User.CreateUser.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile_mobile_ShowroomMng_system.User.LogIn.resources
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\AutomobileShowRoomMngSystem.csproj.GenerateResource.Cache
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile mobile ShowroomMng system.exe
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\Automobile mobile ShowroomMng system.pdb
+F:\Programming C#\AutoMobileShowRoomManagementSystem\Automobile mobile ShowroomMng system\Automobile mobile ShowroomMng system\obj\Release\AutomobileShowRoomMngSystem.csprojResolveAssemblyReference.cache

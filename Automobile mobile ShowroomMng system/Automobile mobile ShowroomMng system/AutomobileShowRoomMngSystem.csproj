@@ -71,10 +71,10 @@
     <Compile Include="MDIParent.Designer.cs">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panelpost\Post.cs">
+    <Compile Include="Panel\Post.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Panelpost\Post.Designer.cs">
+    <Compile Include="Panel\Post.Designer.cs">
       <DependentUpon>Post.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\Qaualification.cs">
@@ -106,7 +106,7 @@
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panelpost\Post.resx">
+    <EmbeddedResource Include="Panel\Post.resx">
       <DependentUpon>Post.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\Qaualification.resx">

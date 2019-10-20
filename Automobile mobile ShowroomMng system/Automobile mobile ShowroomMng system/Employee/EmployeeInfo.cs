@@ -32,7 +32,24 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
         {
             name_load();
             post_load();
+            autogenerate();
 
+        }
+        private void autogenerate()
+        {
+            string num = "EMPID0000";
+            cn.Open();
+            string qry = "select id from tbl_empinfo";
+            SqlCommand cmd = new SqlCommand(qry, cn);
+            SqlDataReader reader = null;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                num = reader["id"].ToString();
+            }
+            num = string.Format("EMPID{0}", (Convert.ToInt32(num.Substring(5)) + 1).ToString("D5"));
+            textBoxEmpId.Text = num;
+            cn.Close();
         }
          public void name_load()
         {
@@ -60,7 +77,7 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
             SqlDataReader reader = comd.ExecuteReader();
             while (reader.Read())
             {
-                comboBoxQualification.Items.Add(reader[0]);
+                comboBoxPost.Items.Add(reader[0]);
             }
             cn.Close();
         }
@@ -135,7 +152,7 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
                 if (dig.ShowDialog() == DialogResult.OK)
                 {
                     imgloc = dig.FileName.ToString();
-                    pictureBox1.ImageLocation = imgloc;
+                    pictureBoximg.ImageLocation = imgloc;
                     //pictureBox1.Visible = true;
                     //pictureBox2.Visible = false;
                 }
@@ -145,6 +162,79 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
             {
                 throw ex;
             }
+
+        }
+
+        private void buttonsave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                byte[] img = null;
+
+                FileStream fs = new FileStream(imgloc, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                img = br.ReadBytes((int)fs.Length);
+                string sql = "INSERT INTO tbl_empinfo(id,name,fname,mname,religion,bgroup,gender,nid,dob,qual,post,phn,adds,img)VALUES('" +
+                textBoxEmpId.Text + "','" + textBoxEmpName.Text + "','" + textBoxFName.Text + "','" + textBoxMName.Text + "','" + comboBoxReligion.Text + "','" +
+                comboBoxBloodGroup.Text + "','" + comboBoxGender.Text + "','" + textBoxNID.Text + "','" + textBoxDate.Text + "','" + comboBoxQualification.Text + "','" + comboBoxPost.Text + "','" + textBoxPhone.Text + "','" + textBoxAddress.Text + "',@img)";
+                if (cn.State != ConnectionState.Open)
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    cmd.Parameters.Add(new SqlParameter("@img", img));
+
+                    int x = cmd.ExecuteNonQuery();
+                    cn.Close();
+
+
+                    MessageBox.Show("Employee Added successfully... ");
+                    autogenerate();
+
+                }
+            }
+            catch
+            {
+                SqlCommand insert = new SqlCommand("INSERT into tbl_empinfo(id,name,fname,mname,religion,bgroup,gender,nid,dob,qual,post,phn,adds) values(@id,@name,@fname,@mname,@religion,@bgroup,@gender,@nid,@dob,@qual,@post,@phn,@adds)", cn);
+
+                insert.Parameters.AddWithValue("@id", textBoxEmpId.Text);
+                insert.Parameters.AddWithValue("@name", textBoxEmpName.Text);
+                insert.Parameters.AddWithValue("@fname", textBoxFName.Text);
+                insert.Parameters.AddWithValue("@mname", textBoxMName.Text);
+                insert.Parameters.AddWithValue("@religion", comboBoxReligion.Text);
+                insert.Parameters.AddWithValue("@bgroup", comboBoxBloodGroup.Text);
+                insert.Parameters.AddWithValue("@gender", comboBoxGender.Text);
+                insert.Parameters.AddWithValue("@nid", textBoxNID.Text);
+                insert.Parameters.AddWithValue("@dob", textBoxDate.Text);
+                insert.Parameters.AddWithValue("@qual", comboBoxQualification.Text);
+                insert.Parameters.AddWithValue("@post", comboBoxPost.Text);
+                insert.Parameters.AddWithValue("@phn", textBoxPhone.Text);
+                insert.Parameters.AddWithValue("@adds", textBoxAddress.Text);
+                cn.Close();
+                cn.Open();
+
+                try
+                {
+                    insert.ExecuteNonQuery();
+                    MessageBox.Show("Add successfully...");
+                }
+                catch
+                {
+                    MessageBox.Show("Try Again!!");
+                }
+                cn.Close();
+                autogenerate();
+            }
+        
+           
+        }
+
+        private void buttonNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoximg_Click(object sender, EventArgs e)
+        {
 
         }
     }
