@@ -32,6 +32,7 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
         {
             name_load();
             post_load();
+            search_load();
             autogenerate();
 
         }
@@ -51,7 +52,22 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
             textBoxEmpId.Text = num;
             cn.Close();
         }
-         public void name_load()
+        public void search_load()
+        {
+            comboBoxSearch.Items.Clear();
+
+            string load = string.Format("SELECT id from tbl_empinfo ");
+            SqlCommand comd = new SqlCommand(load, cn);
+            cn.Close();
+            cn.Open();
+            SqlDataReader reader = comd.ExecuteReader();
+            while (reader.Read())
+            {
+                comboBoxSearch.Items.Add(reader[0]);
+            }
+            cn.Close();
+        }
+        public void name_load()
         {
             comboBoxQualification.Items.Clear();
 
@@ -66,7 +82,8 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
             }
             cn.Close();
         }
-         public void post_load()
+
+        public void post_load()
         {
             comboBoxPost.Items.Clear();
 
@@ -81,7 +98,7 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
             }
             cn.Close();
         }
-         public string imgloc;
+        public string imgloc;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -130,12 +147,12 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
 
         private void textBoxDate_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBoxPost_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void comboBoxQualification_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,6 +206,7 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
 
                     MessageBox.Show("Employee Added successfully... ");
                     autogenerate();
+                   
 
                 }
             }
@@ -224,18 +242,205 @@ namespace Automobile_mobile_ShowroomMng_system.Employee
                 cn.Close();
                 autogenerate();
             }
-        
-           
-        }
 
+
+        }
+        public void new1()
+        {
+            textBoxEmpName.Text = "";
+            textBoxFName.Text = "";
+            textBoxMName.Text = "";
+            comboBoxReligion.Text = "";
+            comboBoxBloodGroup.Text = "";
+            textBoxNID.Text = "";
+            textBoxDate.Text = "";
+            comboBoxGender.Text = "";
+            comboBoxQualification.Text = "";
+            comboBoxPost.Text = "";
+            textBoxPhone.Text = "";
+            textBoxAddress.Text = "";
+            pictureBoximg.Image = null;
+
+
+
+
+
+        }
         private void buttonNew_Click(object sender, EventArgs e)
         {
-
+            comboBoxSearch.Text = "";
+            new1();
+            autogenerate();
+            search_load();
+            buttonsave.Enabled = true;
+            buttonUpdate.Enabled = false;
+            buttonDelete.Enabled = false;
         }
 
         private void pictureBoximg_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonsave.Enabled = false;
+            buttonUpdate.Enabled = true;
+            buttonDelete.Enabled = true;
+            try
+            {
+
+
+                string load = string.Format("SELECT * FROM tbl_empinfo WHERE id=@id", cn);
+                SqlCommand command = new SqlCommand(load, cn);
+                command.Parameters.AddWithValue("@id", comboBoxSearch.Text);
+                cn.Close();
+                cn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBoxEmpId.Text = reader[0].ToString();
+                    textBoxEmpName.Text = reader[1].ToString();
+                    textBoxFName.Text = reader[2].ToString();
+                    textBoxMName.Text = reader[3].ToString();
+                    comboBoxReligion.Text = reader[4].ToString();
+                    comboBoxBloodGroup.Text = reader[5].ToString();
+                    comboBoxGender.Text = reader[6].ToString();
+                    textBoxNID.Text = reader[7].ToString();
+                    textBoxDate.Text = reader[8].ToString();
+                    comboBoxQualification.Text = reader[9].ToString();
+                    comboBoxPost.Text = reader[10].ToString();
+                    textBoxPhone.Text = reader[11].ToString();
+                    textBoxAddress.Text = reader[12].ToString();
+                    byte[] img = (byte[])reader[13];
+                    MemoryStream ms = new MemoryStream(img); ms.Seek(5, SeekOrigin.Begin);
+                    pictureBoximg.Image = Image.FromStream(ms);
+
+
+                }
+                cn.Close();
+            }
+            catch
+            {
+                pictureBoximg.Image = null;
+                string load = string.Format("SELECT * FROM tbl_empinfo WHERE id=@id", cn);
+                SqlCommand command = new SqlCommand(load, cn);
+                command.Parameters.AddWithValue("@id", comboBoxSearch.Text);
+                cn.Close();
+                cn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBoxEmpId.Text = reader[0].ToString();
+                    textBoxEmpName.Text = reader[1].ToString();
+                    textBoxFName.Text = reader[2].ToString();
+                    textBoxMName.Text = reader[3].ToString();
+                    comboBoxReligion.Text = reader[4].ToString();
+                    comboBoxBloodGroup.Text = reader[5].ToString();
+                    comboBoxGender.Text = reader[6].ToString();
+                    textBoxNID.Text = reader[7].ToString();
+                    textBoxDate.Text = reader[8].ToString();
+                    comboBoxQualification.Text = reader[9].ToString();
+                    comboBoxPost.Text = reader[10].ToString();
+                    textBoxPhone.Text = reader[11].ToString();
+                    textBoxAddress.Text = reader[12].ToString();
+
+
+
+                }
+                cn.Close();
+            }
+
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            
+
+            byte[] img = null;
+            FileStream fs = new FileStream(imgloc, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            img = br.ReadBytes((int)fs.Length);
+
+            SqlCommand update = new SqlCommand("UPDATE tbl_empinfo SET id=@id,name=@name,fname=@fname,mname=@mname,religion=@religion,bgroup=@bgroup,gender=@gender,nid=@nid,dob=@dob,qual=@qual,post=@post,phn=@phn,adds=@adds,img=@img WHERE id=@id", cn);
+            update.Parameters.AddWithValue("@id", textBoxEmpId.Text);
+            update.Parameters.AddWithValue("@name", textBoxEmpName.Text);
+            update.Parameters.AddWithValue("@fname", textBoxFName.Text);
+            update.Parameters.AddWithValue("@mname", textBoxMName.Text);
+            update.Parameters.AddWithValue("@religion", comboBoxReligion.Text);
+            update.Parameters.AddWithValue("@bgroup", comboBoxBloodGroup.Text);
+            update.Parameters.AddWithValue("@gender", comboBoxGender.Text);
+            update.Parameters.AddWithValue("@nid", textBoxNID.Text);
+            update.Parameters.AddWithValue("@dob", textBoxDate.Text);
+            update.Parameters.AddWithValue("@qual", comboBoxQualification.Text);
+            update.Parameters.AddWithValue("@post", comboBoxPost.Text);
+            update.Parameters.AddWithValue("@phn", textBoxPhone.Text);
+            update.Parameters.AddWithValue("@adds", textBoxAddress.Text);
+            update.Parameters.AddWithValue("@img", img);
+            cn.Close();
+            cn.Open();
+            try
+            {
+                update.ExecuteNonQuery();
+                MessageBox.Show("Data Update Success");
+                comboBoxSearch.Items.Clear();
+                //search_load();
+            }
+            catch
+            {
+                MessageBox.Show("Error!!");
+            }
+            cn.Close();
+            search_load();
+
+            }
+            catch
+            {
+                SqlCommand update = new SqlCommand("UPDATE tbl_empinfo SET id=@id,name=@name,fname=@fname,mname=@mname,religion=@religion,bgroup=@bgroup,gender=@gender,nid=@nid,dob=@dob,qual=@qual,post=@post,phn=@phn,adds=@adds WHERE id=@id", cn);
+                update.Parameters.AddWithValue("@id", textBoxEmpId.Text);
+                update.Parameters.AddWithValue("@name", textBoxEmpName.Text);
+                update.Parameters.AddWithValue("@fname", textBoxFName.Text);
+                update.Parameters.AddWithValue("@mname", textBoxMName.Text);
+                update.Parameters.AddWithValue("@religion", comboBoxReligion.Text);
+                update.Parameters.AddWithValue("@bgroup", comboBoxBloodGroup.Text);
+                update.Parameters.AddWithValue("@gender", comboBoxGender.Text);
+                update.Parameters.AddWithValue("@nid", textBoxNID.Text);
+                update.Parameters.AddWithValue("@dob", textBoxDate.Text);
+                update.Parameters.AddWithValue("@qual", comboBoxQualification.Text);
+                update.Parameters.AddWithValue("@post", comboBoxPost.Text);
+                update.Parameters.AddWithValue("@phn", textBoxPhone.Text);
+                update.Parameters.AddWithValue("@adds", textBoxAddress.Text);
+       
+                cn.Close();
+                cn.Open();
+                try
+                {
+                    update.ExecuteNonQuery();
+                    MessageBox.Show("Data Update Success");
+                    comboBoxSearch.Items.Clear();
+                    //search_load();
+                }
+                catch
+                {
+                    MessageBox.Show("Error!!");
+                }
+                cn.Close();
+            }
+           }
+         
+
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pictureBoximg.Image = null;
         }
     }
 }
